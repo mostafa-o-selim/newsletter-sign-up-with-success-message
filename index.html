@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  <link rel="stylesheet" href="assets/css/style.min.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      position: fixed;
+      inset: auto 0 0;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <section id="newsletter">
+      <div class="newsletter__content">
+        <figure>
+          <picture>
+            <source media="(min-width: 57rem)" srcset="assets/images/illustration-sign-up-desktop.svg">
+            <img src="assets/images/illustration-sign-up-mobile.svg" alt="Illustration" class="newsletter__image">
+          </picture>
+        </figure>
+        <div class="newsletter__update">
+          <h2 class="newsletter__heading">Stay updated!</h2>
+          <p class="newsletter__paragraph">Join 60,000+ product managers receiving monthly updates on:</p>
+          <ul class="newsletter__list">
+            <li class="newsletter__list_item">
+              <p class="newsletter__paragraph">Product discovery and building what matters</p>
+            </li>
+            <li class="newsletter__list_item">
+              <p class="newsletter__paragraph">Measuring to ensure updates are a success</p>
+            </li>
+            <li class="newsletter__list_item">
+              <p class="newsletter__paragraph">And much more!</p>
+            </li>
+          </ul>
+          <div class="newsletter__form">
+            <div class="row">
+              <label for="newsletterEmail">Email address</label>
+              <p id="emailError" role="alert">Valid email required</p>
+            </div>
+            <input type="text" name="email" id="newsletterEmail" placeholder="email@company.com" aria-required="true">
+            <button type="button" id="sendEmail" aria-label="Subscribe to monthly newsletter">Subscribe to monthly
+              newsletter</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+
+  </main>
+
+  <script>
+    const newsletter__content = document.querySelector(".newsletter__content");
+    const newsletterEmail = document.getElementById("newsletterEmail");
+    const sendEmail = document.getElementById("sendEmail");
+    const validEmail = (v) => /(?:[a-z0-9+!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/i.test(v);
+
+    sendEmail.addEventListener("click", function () {
+      if (validEmail(newsletterEmail.value)) {
+        newsletter__content.classList.add("success");
+        newsletter__content.innerHTML = `<div class="newsletter__update">
+  <img src="assets/images/icon-success.svg" alt="Thanks for subscribing!">
+  <h2 class="newsletter__heading">Thanks for subscribing!</h2>
+  <p class="newsletter__paragraph">A confirmation email has been sent to <b>${newsletterEmail.value}</b>.Please open it and click the button inside to confirm your subscription.</p>
+  <button type="button" id="close" aria-label="Dismiss message">Dismiss message</button>
+</div>`;
+
+        const closeBTN = document.getElementById("close");
+
+        closeBTN.addEventListener("click", function () {
+          newsletter__content.remove();
+        });
+
+      } else {
+        newsletterEmail.setAttribute("aria-invalid", "true");
+        newsletterEmail.setAttribute("aria-describedby", "emailError");
+        newsletterEmail.parentElement.classList.add("required");
+        newsletterEmail.focus();
+      }
+    });
+
+
+  </script>
+
+</body>
+
+</html>

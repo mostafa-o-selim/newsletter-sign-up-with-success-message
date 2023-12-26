@@ -1,0 +1,202 @@
+section#newsletter {
+  background-color: hsl(235, 18%, 26%);
+  font-family: Roboto, sans-serif;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 57rem) {
+  section#newsletter {
+    display: flex;
+  }
+}
+section#newsletter .newsletter__content {
+  background-color: hsl(0, 0%, 100%);
+  max-width: 58rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+@media (min-width: 57rem) {
+  section#newsletter .newsletter__content {
+    border-radius: 2rem;
+  }
+}
+@media (min-width: 57rem) {
+  section#newsletter .newsletter__content {
+    display: flex;
+  }
+}
+@media (min-width: 57rem) {
+  section#newsletter .newsletter__content {
+    padding: 1.5rem;
+  }
+}
+section#newsletter .newsletter__content.success {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 31.5rem;
+  position: relative;
+}
+@media (min-width: 57rem) {
+  section#newsletter .newsletter__content.success {
+    min-height: auto;
+  }
+}
+@media (min-width: 57rem) {
+  section#newsletter .newsletter__content.success .newsletter__update {
+    padding: 2.5rem;
+  }
+}
+section#newsletter .newsletter__content.success .newsletter__update .newsletter__heading {
+  line-height: 1.2;
+}
+section#newsletter .newsletter__content figure picture img.newsletter__image {
+  width: 100%;
+}
+@media (min-width: 57rem) {
+  section#newsletter .newsletter__content figure picture img.newsletter__image {
+    width: auto;
+  }
+}
+section#newsletter .newsletter__content .newsletter__update {
+  color: hsl(235, 18%, 26%);
+  --padding: 1.5rem;
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+  line-height: 1.5;
+}
+@media (min-width: 57rem) {
+  section#newsletter .newsletter__content .newsletter__update {
+    --padding: 2.5rem;
+  }
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__heading {
+  color: hsl(234, 29%, 20%);
+  font-size: 2.5rem;
+  margin-top: 1.5rem;
+}
+@media (min-width: 57rem) {
+  section#newsletter .newsletter__content .newsletter__update .newsletter__heading {
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 57rem) {
+  section#newsletter .newsletter__content .newsletter__update .newsletter__heading {
+    margin-top: 3.25rem;
+  }
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__paragraph {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__list {
+  list-style: none;
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__list .newsletter__list_item {
+  padding-left: 2.375rem;
+  position: relative;
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__list .newsletter__list_item::before {
+  content: url(../images/icon-list.svg);
+  position: absolute;
+  inset: 0 auto auto 0;
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__form {
+  color: hsl(234, 29%, 20%);
+  font-size: 0.75em;
+  margin-top: 2.5rem;
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__form .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  margin-bottom: 0.625rem;
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__form .row #emailError {
+  color: hsl(4, 100%, 67%);
+  display: none;
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__form.required .row #emailError {
+  display: block;
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__form #newsletterEmail {
+  border: 1px solid hsl(231, 7%, 60%);
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__form #newsletterEmail::-moz-placeholder {
+  color: hsl(231, 7%, 60%);
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__form #newsletterEmail::placeholder {
+  color: hsl(231, 7%, 60%);
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__form #newsletterEmail:focus {
+  border-color: hsl(234, 29%, 20%);
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__form.required #newsletterEmail {
+  border-color: hsl(4, 100%, 67%);
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__form #sendEmail {
+  background-color: hsl(234, 29%, 20%);
+  border-radius: 0.5rem;
+  color: hsl(0, 0%, 100%);
+  height: 3.8125rem;
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__form #sendEmail:hover, section#newsletter .newsletter__content .newsletter__update .newsletter__form #sendEmail:focus-visible {
+  background-image: linear-gradient(to right, #ff5478, #fd683d);
+}
+section#newsletter .newsletter__content .newsletter__update .newsletter__form #sendEmail:active {
+  background-image: none;
+}
+section#newsletter .newsletter__content .newsletter__update #close {
+  background-color: hsl(234, 29%, 20%);
+  border-radius: 0.5rem;
+  color: hsl(0, 0%, 100%);
+  height: 3.8125rem;
+  width: calc(100% - 3rem);
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  position: absolute;
+  left: 1.5rem;
+  bottom: 0;
+}
+@media (min-width: 57rem) {
+  section#newsletter .newsletter__content .newsletter__update #close {
+    position: static;
+  }
+}
+@media (min-width: 57rem) {
+  section#newsletter .newsletter__content .newsletter__update #close {
+    width: 100%;
+  }
+}
+section#newsletter .newsletter__content .newsletter__update #close:hover, section#newsletter .newsletter__content .newsletter__update #close:focus-visible {
+  background-image: linear-gradient(to right, #ff5478, #fd683d);
+}
+section#newsletter .newsletter__content .newsletter__update #close:active {
+  background-image: none;
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 700;
+  src: url(../fonts/Roboto-Bold.ttf);
+}
+@font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  src: url(../fonts/Roboto-Regular.ttf);
+}/*# sourceMappingURL=index.css.map */
